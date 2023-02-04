@@ -4,6 +4,13 @@ import PersonList from './components/tsc-react-learning-curve/PersonList'
 import Status from './components/tsc-react-learning-curve/Status'
 import Header from './components/tsc-react-learning-curve/Header'
 import Oscar from './components/tsc-react-learning-curve/Oscar'
+import ButtonComponent from './components/tsc-react-learning-curve/Button'
+import Input from './components/tsc-react-learning-curve/Input'
+import Container from './components/tsc-react-learning-curve/Container'
+import User from './components/tsc-react-learning-curve/State/useState/User'
+import ThemeContextProvider from './components/tsc-react-learning-curve/State/Context/ThemeContext'
+import Box from './components/tsc-react-learning-curve/State/Context/Box'
+
 function App() {
   //  passing objects
   const person = {
@@ -13,16 +20,16 @@ function App() {
   //  passing arrays
   const personList = [
      {
-      first: 'Jibowu',
-      last:'yktv'
+      firstName: 'Jibowu',
+      lastName:'yktv'
      },
      {
-      first: 'kele',
-      last:'chi'
+      firstName: 'kele',
+      lastName:'chi'
      },
      {
-      first: 'whatcan',
-      last:'fa'
+      firstName: 'whatcan',
+      lastName:'fa'
      }
   ]
   return (
@@ -47,6 +54,21 @@ function App() {
       Hello
       </Header>
     </Oscar>
+
+    {/* passing events as props */}
+    <ButtonComponent handleClick={(event, id) => {
+       console.log('Button Clicked', event, id)
+    }}/>
+
+    <Input value='' handleChange={(event) => console.log(event)}/>
+    {/*  passing styles as props */}
+    <Container style={{ padding: '1rem', margin: '2px'}}/>
+    {/*  useState scenarios */}
+    <User/>
+    {/* useContext scenarios */}
+    <ThemeContextProvider>
+      <Box/>
+    </ThemeContextProvider>
     </div>
   )
 }

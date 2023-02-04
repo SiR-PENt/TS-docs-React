@@ -1,12 +1,5 @@
-
+import { PersonProps } from "./Types/Person.types"
 //  using object props
-
-type PersonProps = {
-  name: {
-    firstName: string,
-    lastName: string
-  }
-}
 
 export default function Person ({name}: PersonProps) {
 

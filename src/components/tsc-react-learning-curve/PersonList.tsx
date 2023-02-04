@@ -1,20 +1,18 @@
 //  using arays of objects
-
+import { Name } from "./Types/Person.types"
 type PersonListProp = {
-    names: {
-      first: string,
-      last: string
-    }[]
+    names: Name[]
 }
 
 export default function PersonList({names}: PersonListProp) {
 
     return (
-          <div>
+      
+         <div>
             {       
           names.map(name => {
-                const {first, last } = name
-                return <h2>{first}, {last}</h2>
+                const {firstName, lastName } = name
+                return <h2>{firstName}, {lastName}</h2>
             })
             }
         </div>
