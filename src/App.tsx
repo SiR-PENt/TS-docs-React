@@ -10,7 +10,10 @@ import Container from './components/tsc-react-learning-curve/Container'
 import User from './components/tsc-react-learning-curve/State/useState/User'
 import ThemeContextProvider from './components/tsc-react-learning-curve/State/Context/ThemeContext'
 import Box from './components/tsc-react-learning-curve/State/Context/Box'
-
+import { UserContextProvider } from './components/tsc-react-learning-curve/State/Context/UserContext'
+import ContextUser from './components/tsc-react-learning-curve/State/Context/User'
+import Private from './components/tsc-react-learning-curve/State/auth/Private'
+import Profile from './components/tsc-react-learning-curve/State/auth/Profile'
 function App() {
   //  passing objects
   const person = {
@@ -69,6 +72,12 @@ function App() {
     <ThemeContextProvider>
       <Box/>
     </ThemeContextProvider>
+    {/*  useContext future value */}
+     <UserContextProvider>
+      <ContextUser/>
+     </UserContextProvider>
+     {/* component prop */}
+     <Private isLoggedIn={true} component={Profile}/>
     </div>
   )
 }
