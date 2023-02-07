@@ -14,6 +14,8 @@ import { UserContextProvider } from './components/tsc-react-learning-curve/State
 import ContextUser from './components/tsc-react-learning-curve/State/Context/User'
 import Private from './components/tsc-react-learning-curve/State/auth/Private'
 import Profile from './components/tsc-react-learning-curve/State/auth/Profile'
+import Lists from './components/tsc-react-learning-curve/Generics/Lists'
+import { RandomNumber } from './components/tsc-react-learning-curve/Restriction/RandomNumber'
 function App() {
   //  passing objects
   const person = {
@@ -78,6 +80,32 @@ function App() {
      </UserContextProvider>
      {/* component prop */}
      <Private isLoggedIn={true} component={Profile}/>
+     {/* generic props */}
+     {/* <Lists items={['Batman', 'Superman', 'Wonder Woman']} 
+      onClick={(item) => console.log(item)}/>
+     <Lists items={[1, 2, 3]} 
+      onClick={(item) => console.log(item)}/> */}
+
+     <Lists items={[
+      { 
+      id: 1,
+      first: 'Bruce',
+      second: 'Wayna',
+      },
+      { 
+      id: 2,
+      first: 'Bruce',
+      second: 'Wayn4',
+      },
+      { 
+      id: 3,
+      first: 'Bruc2',
+      second: 'Wayna6',
+      },
+       ]} 
+      onClick={(item) => console.log(item)}/>
+     {/* Restricting Props */}
+     <RandomNumber value={10} isPositive/>
     </div>
   )
 }

@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preinstall": "npm install --package-lock-only --ignore-scripts && npx npm-force-resolutions"
   },
   "dependencies": {
+    "npm-force-resolutions": "^0.0.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -18,5 +20,8 @@
     "@vitejs/plugin-react": "^3.0.0",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
+  },
+  "resolutions": {
+    "@types/react": "^17.0.38"
   }
 }
