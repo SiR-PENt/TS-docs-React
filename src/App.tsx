@@ -16,6 +16,9 @@ import Private from './components/tsc-react-learning-curve/State/auth/Private'
 import Profile from './components/tsc-react-learning-curve/State/auth/Profile'
 import Lists from './components/tsc-react-learning-curve/Generics/Lists'
 import { RandomNumber } from './components/tsc-react-learning-curve/Restriction/RandomNumber'
+import Toast from './components/tsc-react-learning-curve/TemplateLiterals/Toast'
+import CustomButton from './components/tsc-react-learning-curve/HTML/Button'
+import Text from './components/tsc-react-learning-curve/Polymorphic/Text'
 function App() {
   //  passing objects
   const person = {
@@ -106,7 +109,18 @@ function App() {
       onClick={(item) => console.log(item)}/>
      {/* Restricting Props */}
      <RandomNumber value={10} isPositive/>
+     {/* Template literals and exclude */}
+     <Toast position='left-top'/>
+     {/* Wrapping HTML elements : COMPONENTPROPS*/}
+     <CustomButton variant='primary' onClick={() => console.log('clicked')}>
+        Primary Button
+      </CustomButton>
+      {/* Polymorphic components */}
+      <Text size='md' as='h1'>Heading</Text>
+      <Text size='sm' as='p' color='secondary'>Paragraph</Text>
+      <Text size='lg' as='label' htmlFor='you'>Heading</Text>
     </div>
+    
   )
 }
 
